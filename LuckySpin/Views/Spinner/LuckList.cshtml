@@ -1,0 +1,36 @@
+@page
+@model LuckySpin.Models.RepoService
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>LuckList</title>
+</head>
+<body>
+  <h2>Here is the List of All of your Luck</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Luck</th>
+                <th>Result</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (LuckySpin.Models.Spin s in @Model.Spins)
+            {
+                <tr>
+                    <td>@s.Luck</td>
+                    <td>@s.IsWinner</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    
+</body>
+</html>
